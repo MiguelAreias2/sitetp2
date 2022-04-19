@@ -1,23 +1,13 @@
-const connection = function () {
-    var mysql = require('mysql');
-
-    var con = mysql.createConnection({
-        host: "localhost",
-        user: "root",
-        password: "Miguel#2001",
-        database: "srsdb"
-    });
-
-    con.connect((err) => {
-        if (err) {
-            console.log("Error occurred", err);
-        } else {
-            console.log("Connected to MySQL Server");
-        }
-    });
-    return con
-}
-
 module.exports = {
-    connection
-}
+    HOST: "localhost",
+    USER: "postgres",
+    PASSWORD: "1234",
+    DB: "srsdb",
+    dialect: "postgres",
+    pool: {
+      max: 5,
+      min: 0,
+      acquire: 30000,
+      idle: 10000
+    }
+  };
