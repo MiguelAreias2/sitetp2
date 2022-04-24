@@ -6,21 +6,21 @@ const cors = require('cors')
 const controller = require("./controllers/user.controller");
 
 
-app.set('view engine', 'ejs')
+//app.set('view engine', 'ejs')
 const bodyParser = require("body-parser");
 const db = require("./models");
 db.sequelize.sync();
 
 
 // index page
-app.get('/', function(req, res) {
-  res.render('pages/index');
+/*app.get('/', function(req, res) {
+  res.sendFile('C:/Users/migue/Desktop/6º SEMESTRE/SEGURANÇA DE REDES E SISTEMAS/sitetp2/views/index.html');
 });
-
-// about page
 app.get('/about', function(req, res) {
-  res.render('pages/about');
+  res.sendFile('C:/Users/migue/Desktop/6º SEMESTRE/SEGURANÇA DE REDES E SISTEMAS/sitetp2/views/about.html');
 });
+*/
+app.use(express.static("C:/Users/migue/Desktop/6º SEMESTRE/SEGURANÇA DE REDES E SISTEMAS/sitetp2/views/"))
 // parse requests of content-type - application/json
 api.use(bodyParser.json());
 api.use(cors())
